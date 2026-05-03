@@ -21,7 +21,7 @@ async function userSignInController(req,res){
 
        const checkPassword = await bcrypt.compare(password,user.password)
 
-       console.log("checkPassoword",checkPassword)
+       console.log("checkPassword",checkPassword)
 
        if(checkPassword){
         const tokenData = {
@@ -31,10 +31,11 @@ async function userSignInController(req,res){
         const token = await jwt.sign(tokenData, process.env.TOKEN_SECRET_KEY, { expiresIn: 60 * 60 * 8 });
 
         const tokenOption = {
-            httpOnly : true,
-            secure : true
-        }
-
+            httpOnly: true,
+            secure: true,           // needed for HTTPS (Render uses HTTPS)
+            sameSite: 'None'        // allows cookie to be sent cross-site
+        };
+        
         res.cookie("token",token,tokenOption).status(200).json({
             message : "Login successfully",
             data : token,
@@ -45,11 +46,6 @@ async function userSignInController(req,res){
        }else{
          throw new Error("Please check Password")
        }
-
-
-
-
-
 
 
     }catch(err){
