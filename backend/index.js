@@ -8,7 +8,7 @@ const router = require('./routes')
 
 const app = express()
 app.use(cors({
-    origin: ["http://localhost:3000", "https://onlineshop-1-3hd9.onrender.com"],
+    origin: ["http://localhost:3000", "https://online-shop-2-0-1.onrender.com"],
     credentials : true
 }))
 app.use(express.json())
