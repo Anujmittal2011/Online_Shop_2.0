@@ -261,41 +261,6 @@ const Cart = () => {
                 image: "https://cdn.razorpay.com/logos/GhRQcyean79PqE_medium.png",
                 order_id: responseData.order.id,
 
-    //             handler: async function (paymentResponse) {
-    
-    // console.log("Payment Successful:", paymentResponse);
-
-    // try {
-    //     // Clear cart data from backend
-    //     for (const item of data) {
-    //         await fetch(SummaryApi.deleteCartProduct.url, {
-    //             method: SummaryApi.deleteCartProduct.method,
-    //             credentials: "include",
-    //             headers: {
-    //                 "Content-Type": "application/json",
-    //             },
-    //             body: JSON.stringify({
-    //                 _id: item._id,
-    //             }),
-    //         });
-    //     }
-
-    //     // Refresh cart
-    //     await fetchData();
-    //     await context.fetchUserAddToCart();
-
-    //     // Redirect to success page
-    //     navigate("/success");
-    // } catch (error) {
-    //     console.error("Post-payment error:", error);
-
-    //     // Even if cart clearing fails, payment was successful
-    //     navigate("/success");
-    // }
-    //             },
-
-
-
                 handler: async function (response) {
                     try {
                         const verifyResponse = await fetch(
