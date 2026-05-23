@@ -1,4 +1,4 @@
-const backendDomin = process.env.REACT_APP_BACKEND_URL  //"http://localhost:8080"
+const backendDomin = process.env.REACT_APP_BACKEND_URL || "http://localhost:8080"  // fallback to local backend
 // const backendDomin = "https://onlineshop-aq8x.onrender.com"
 
 
@@ -90,6 +90,10 @@ const SummaryApi = {
     },
     filterProduct: {
       url: `${backendDomin}/api/filter-product`,
+      method: "post"
+    },
+    aiChat: {
+      url: `${backendDomin}/api/ai-chat`,
       method: "post"
     },
     payment: {

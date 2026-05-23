@@ -27,6 +27,7 @@ const webhooks = require('../controller/order/webhook')
 const orderController = require('../controller/order/order.controller')
 const allOrderController = require('../controller/order/allOrder.controller')
 const verifyPayment = require('../controller/order/verifyPayment')
+const aiChatController = require('../controller/ai/aiChatController')
 
 
 router.post("/signup",userSignUpController)
@@ -61,6 +62,7 @@ router.post("/delete-cart-product",authToken,deleteAddToCartProduct)
 router.post('/checkout',authToken,paymentController)
 router.post("/verify-payment", authToken, verifyPayment);
 router.post('/webhook',webhooks) // /api/webhook
+router.post('/ai-chat', aiChatController)
 router.get("/order-list",authToken,orderController)
 router.get("/all-order",authToken,allOrderController)
 

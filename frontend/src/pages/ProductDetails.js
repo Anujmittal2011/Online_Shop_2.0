@@ -6,6 +6,7 @@ import { FaStarHalf } from "react-icons/fa";
 import displayINRCurrency from '../helpers/displayCurrency';
 import VerticalCardProduct from '../components/VerticalCardProduct';
 import CategroyWiseProductDisplay from '../components/CategoryWiseProductDisplay';
+import AiAssistant from '../components/AiAssistant';
 import addToCart from '../helpers/addToCart';
 import Context from '../context';
 
@@ -225,6 +226,8 @@ const ProductDetails = () => {
           <CategroyWiseProductDisplay category={data?.category} heading={"Recommended Product"}/>
         )
       }
+
+      {data?._id && <AiAssistant productId={data._id} />}
      
 
 
