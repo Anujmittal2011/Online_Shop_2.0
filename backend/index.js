@@ -9,12 +9,8 @@ const router = require('./routes')
 const app = express()
 app.use(cors({
     origin: ["http://localhost:3000", "https://online-shop-2-0-1.onrender.com"],
-<<<<<<< HEAD
     credentials: true,
     // "https://onlineshop-1-3hd9.onrender.com"
-=======
-    credentials : true
->>>>>>> 528983d347d1d415397a2381cebbb4d126a1430c
 }))
 app.use(express.json())
 app.use(cookieParser())
